@@ -25,9 +25,6 @@ def detail(request, blog_id):
     blog_detail = get_object_or_404(Blog, pk = blog_id)
     return render(request, 'blog/detail.html', {'blog': blog_detail})
 
-def new(request): # new.html을 띄어주는 함수
-    return render(request, 'blog/new.html')
-
 def create(request): # 입력받은 내용을 데이터베이스에 넣어주는 함수
     blog = Blog()
     blog.title = request.GET['title']
